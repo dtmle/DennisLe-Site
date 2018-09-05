@@ -10,7 +10,7 @@ function bubblePressed() {
   }
 }
 
-function bubbleHover() {
+function mouseMoved() {
   for (let i = 0; i < bubbles.length; i++) {
     let currBub = bubbles[i];
     let distance = dist(currBub.x, currBub.y, mouseX, mouseY);
@@ -37,7 +37,6 @@ function bubbleHover() {
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.mousePressed(bubblePressed);
-  canvas.mouseMoved(bubbleHover);
   for (let i = 0; i < 200; i++) {
     let x = random(width);
     let y = random(height);
