@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Work Sans', sans-serif;
 }
 
 canvas {
@@ -11,25 +11,33 @@ canvas {
 
 .Holder {
     display: table;
-    background-color: rgba(240, 248, 255, 0.473);
-    margin-top: 2.5%;
     position: fixed;
-    padding-left: 10%;
-    width: 100%;
+    width: 33%;
     z-index: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
 }
 
 .Holder h1 {
-    font-size: 36px;
+    font-size: 42px;
     color: rgb(255, 255, 255);
     vertical-align: middle;
+    text-align: center;
 }
 
 .Holder span {
-    display: table-cell;
-    line-height: 100%;
+    display: table-row;
     vertical-align: middle;
+    text-align: center;
 }
+
+.Holder span a {
+    padding-left: 0.5em;
+}
+
 
 .Credit {
     color: rgb(255, 255, 255);
