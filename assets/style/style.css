@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+canvas {
+    margin: auto;
+}
+
+.Holder {
+    display: table;
+    background-color: rgba(240, 248, 255, 0.473);
+    margin-top: 2.5%;
+    position: fixed;
+    padding-left: 10%;
+    width: 100%;
+    z-index: 0;
+}
+
+.Holder h1 {
+    padding-left: 10%;
+    font-size: 36px;
+    color: rgb(255, 255, 255);
+    vertical-align: middle;
+}
+
+.Holder span {
+    display: table-cell;
+    line-height: 100%;
+    vertical-align: middle;
+}
+
+.Credit {
+    font-size: 8px;
+    right: 0;
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(240, 248, 255, 0.473);
+}
