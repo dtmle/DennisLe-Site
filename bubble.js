@@ -5,7 +5,6 @@ class Bubble {
     this.y = y;
     this.deltY = [-0.5, 0.5];
     this.r = r;
-    this.brightness = 0;
     this.color = "#464849";
     this.altColor = "#757a7c";
     this.isusingAlt = false;

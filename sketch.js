@@ -11,7 +11,7 @@ function bubblePressed() {
   }
 }
 
-function mouseMoved() {
+function bubbleHover(bubbles) {
   for (let i = 0; i < bubbles.length; i++) {
     let currBub = bubbles[i];
     let distance = dist(currBub.x, currBub.y, mouseX, mouseY);
@@ -35,13 +35,18 @@ function mouseMoved() {
   }
 }
 
+function mouseMoved() {
+  bubbleHover(bubbles);
+  bubbleHover(backgroundBubbles);
+}
+
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.mousePressed(bubblePressed);
   for (let i = 0; i < 200; i++) {
     let x = random(width);
     let y = random(height);
-    let r = random(2, 10);
+    let r = random(5, 15);
     let bub = new Bubble(x, y, r);
     bubbles.push(bub);
   }
@@ -71,7 +76,7 @@ function draw() {
   }
   for (let i = 0; i < backgroundBubbles.length; i++) {
     let currBub = backgroundBubbles[i];
-    currBub.move([-0.5, 0.5], [-0.5, 0.5]);
+    currBub.move(currBub.deltX, currBub.deltY);
     currBub.show();
   }
 }
