@@ -1,9 +1,9 @@
 class Bubble {
   constructor(x, y, r) {
     this.x = x;
-    this.deltX = [-0.5, 0.5];
+    this.deltX = [-0.2, 0.2];
     this.y = y;
-    this.deltY = [-0.5, 0.5];
+    this.deltY = [-0.2, 0.2];
     this.r = r;
     this.color = "#464849";
     this.altColor = "#757a7c";
