@@ -7,7 +7,7 @@ let h1 = "";
 
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
-  frameRate(30);
+  frameRate(60);
   canvas.mousePressed(bubblePressed);
 
   center = selectAll(".Holder")[0];
