@@ -74,11 +74,11 @@ function draw() {
   for (let i = 0; i < bubbles.length; i++) {
     let currBub = bubbles[i];
     currBub.move(currBub.deltX, currBub.deltY);
-    currBub.show();
+    currBub.show(15);
   }
   for (let i = 0; i < backgroundBubbles.length; i++) {
     let currBub = backgroundBubbles[i];
     currBub.move(currBub.deltX, currBub.deltY);
-    currBub.show();
+    currBub.show(3);
   }
 }

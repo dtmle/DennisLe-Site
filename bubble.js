@@ -62,9 +62,9 @@ class Bubble {
     this.y = constrain(this.y, 0 + this.r, height - this.r);
   }
 
-  show() {
+  show(weight) {
     stroke(0, 125);
-    strokeWeight(15);
+    strokeWeight(weight);
     if (this.isusingAlt) {
       fill(this.altColor);
     } else {
