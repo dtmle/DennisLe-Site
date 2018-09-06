@@ -1,5 +1,5 @@
-const bubbles = [];
-const backgroundBubbles = [];
+let bubbles = [];
+let backgroundBubbles = [];
 let center = "";
 let liIcon = "";
 let ghIcon = "";
@@ -29,7 +29,7 @@ function setup() {
   let bottomBound = windowHeight / 2 + center.height / 2 + 25;
   let topBound = windowHeight / 2 - center.height / 2 - 25;
 
-  for (let i = 0; i < 200; i++) {
+  for (let i = 0; i < 100; i++) {
     let x = floor(random(windowWidth));
     let y = floor(random(windowHeight));
     while (
@@ -40,11 +40,11 @@ function setup() {
       x = floor(random(windowWidth));
       y = floor(random(windowHeight));
     }
-    let r = random(5, 20);
+    let r = random(5, 25);
     let bub = new Bubble(x, y, r);
     bubbles.push(bub);
   }
-  for (let i = 0; i < 500; i++) {
+  for (let i = 0; i < 300; i++) {
     let x = random(windowWidth);
     let y = random(windowHeight);
     while (

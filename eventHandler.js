@@ -26,8 +26,8 @@ function bubbleHover(bubbles) {
         currBub.deltX = [-10, 0];
       }
     } else {
-      currBub.deltX = [-0.5, 0.5];
-      currBub.deltY = [-0.5, 0.5];
+      currBub.deltX = [-0.2, 0.2];
+      currBub.deltY = [-0.2, 0.2];
     }
   }
 }
@@ -59,4 +59,12 @@ function nameHover() {
 
 function nameOff() {
   this.elt.style.color = "rgb(255, 255, 255)";
+}
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+    bubbles = [];
+    backgroundBubbles = [];
+    clear();
+    setup();
 }
