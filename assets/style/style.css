@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 canvas {
@@ -48,5 +48,5 @@ canvas {
 }
 
 .Grayscale {
-    filter: contrast(160%);
+  filter: contrast(160%);
 }
