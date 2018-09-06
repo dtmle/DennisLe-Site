@@ -22,7 +22,7 @@ class Bubble {
 
   clicked(px, py) {
     let distance = dist(px, py, this.x, this.y);
-    if (distance < this.r) {
+    if (distance < this.r*20) {
       if (this.isClicked) {
         this.isClicked = false;
       } else {
@@ -40,12 +40,26 @@ class Bubble {
     if (!this.isClicked) {
       this.x = this.x + random(x[0], x[1]);
       this.y = this.y + random(y[0], y[1]);
-      this.x = constrain(this.x, 0 + this.r, width - this.r);
-      this.y = constrain(this.y, 0 + this.r, height - this.r);
     } else {
-      this.x = mouseX;
-      this.y = mouseY;
+    let moveDown = mouseY - this.y >= 0 ? true : false;
+    let moveRight = mouseX - this.x >= 0 ? true : false;
+    if(this.y !== mouseY) {
+        if(moveDown) {
+            this.y = this.y + random(4, 8);
+        } else {
+            this.y = this.y - random(4, 8);
+        }
+        if(moveRight) {
+            this.x = this.x + random(4, 8);
+        } else {
+            this.x = this.x - random(4, 8);
+        }
     }
+    //   this.x = mouseX;
+    //   this.y = mouseY;
+    }
+    this.x = constrain(this.x, 0 + this.r, width - this.r);
+    this.y = constrain(this.y, 0 + this.r, height - this.r);
   }
 
   show() {

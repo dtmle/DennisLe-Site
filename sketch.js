@@ -1,6 +1,9 @@
 const bubbles = [];
 const backgroundBubbles = [];
 let center = "";
+let liIcon = "";
+let ghIcon = "";
+let h1 = "";
 
 function bubblePressed() {
   for (let i = 0; i < bubbles.length; i++) {
@@ -41,15 +44,52 @@ function mouseMoved() {
   bubbleHover(backgroundBubbles);
 }
 
+function iconHover() {
+  if(this.elt.className === "LinkedIn") {
+    this.elt.style.filter = "brightness(0.35)";
+  } else {
+    this.elt.style.filter = "brightness(0.35)";
+  }
+}
+
+function iconOff() {
+  if(this.elt.className === "LinkedIn") {
+    this.elt.style.filter = "brightness(1)";
+  } else {
+    this.elt.style.filter = "brightness(1)";
+  } 
+}
+
+function nameHover() {
+  this.elt.style.color = "rgb(70, 72, 73)";
+}
+
+function nameOff() {
+  this.elt.style.color = "rgb(255, 255, 255)";
+}
+
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.mousePressed(bubblePressed);
 
   center = selectAll(".Holder")[0];
+
+  liIcon = selectAll(".LinkedIn")[0];
+  liIcon.mouseOver(iconHover);
+  liIcon.mouseOut(iconOff);
+
+  ghIcon = selectAll(".GitHub")[0];
+  ghIcon.mouseOver(iconHover);
+  ghIcon.mouseOut(iconOff);
+
+  h1 = selectAll("h1")[0];
+  h1.mouseOver(nameHover);
+  h1.mouseOut(nameOff);
+
   let leftBound = windowWidth / 2 - center.width / 2;
   let rightBound = windowWidth / 2 + center.width / 2;
-  let bottomBound = windowHeight / 2 + center.height / 2;
-  let topBound = windowHeight / 2 - center.height / 2;
+  let bottomBound = windowHeight / 2 + center.height / 2 + 25;
+  let topBound = windowHeight / 2 - center.height / 2 - 25;
 
   for (let i = 0; i < 200; i++) {
     let x = floor(random(width));
