@@ -1,5 +1,6 @@
 const bubbles = [];
 const backgroundBubbles = [];
+let center = "";
 
 function bubblePressed() {
   for (let i = 0; i < bubbles.length; i++) {
@@ -43,18 +44,41 @@ function mouseMoved() {
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.mousePressed(bubblePressed);
+
+  center = selectAll(".Holder")[0];
+  let leftBound = windowWidth / 2 - center.width / 2;
+  let rightBound = windowWidth / 2 + center.width / 2;
+  let bottomBound = windowHeight / 2 + center.height / 2;
+  let topBound = windowHeight / 2 - center.height / 2;
+
   for (let i = 0; i < 200; i++) {
-    let x = random(width);
-    let y = random(height);
+    let x = floor(random(width));
+    let y = floor(random(height));
+    while (
+      x > leftBound &&
+      x < rightBound &&
+      (y < bottomBound && y > topBound)
+    ) {
+      x = floor(random(width));
+      y = floor(random(height));
+    }
     let r = random(5, 15);
     let bub = new Bubble(x, y, r);
     bubbles.push(bub);
   }
   for (let i = 0; i < 500; i++) {
-    let backX = random(width);
-    let backY = random(height);
-    let backR = random(2, 2);
-    let backgroundBub = new Bubble(backX, backY, backR);
+    let x = random(width);
+    let y = random(height);
+    while (
+      x > leftBound &&
+      x < rightBound &&
+      (y < bottomBound && y > topBound)
+    ) {
+      x = floor(random(width));
+      y = floor(random(height));
+    }
+    let r = random(2, 2);
+    let backgroundBub = new Bubble(x, y, r);
     backgroundBubbles.push(backgroundBub);
   }
 }
