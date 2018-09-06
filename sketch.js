@@ -1,5 +1,5 @@
-const bubbles = [];
-const backgroundBubbles = [];
+let bubbles = [];
+let backgroundBubbles = [];
 let center = "";
 let liIcon = "";
 let ghIcon = "";

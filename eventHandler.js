@@ -60,3 +60,11 @@ function nameHover() {
 function nameOff() {
   this.elt.style.color = "rgb(255, 255, 255)";
 }
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+    bubbles = [];
+    backgroundBubbles = [];
+    clear();
+    setup();
+}
