@@ -92,30 +92,30 @@ function setup() {
   let topBound = windowHeight / 2 - center.height / 2 - 25;
 
   for (let i = 0; i < 200; i++) {
-    let x = floor(random(width));
-    let y = floor(random(height));
+    let x = floor(random(windowWidth));
+    let y = floor(random(windowHeight));
     while (
       x > leftBound &&
       x < rightBound &&
       (y < bottomBound && y > topBound)
     ) {
-      x = floor(random(width));
-      y = floor(random(height));
+      x = floor(random(windowWidth));
+      y = floor(random(windowHeight));
     }
     let r = random(5, 15);
     let bub = new Bubble(x, y, r);
     bubbles.push(bub);
   }
   for (let i = 0; i < 500; i++) {
-    let x = random(width);
-    let y = random(height);
+    let x = random(windowWidth);
+    let y = random(windowHeight);
     while (
       x > leftBound &&
       x < rightBound &&
       (y < bottomBound && y > topBound)
     ) {
-      x = floor(random(width));
-      y = floor(random(height));
+      x = floor(random(windowWidth));
+      y = floor(random(windowHeight));
     }
     let r = random(2, 2);
     let backgroundBub = new Bubble(x, y, r);
