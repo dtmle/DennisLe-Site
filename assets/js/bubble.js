@@ -55,8 +55,6 @@ class Bubble {
           this.x = this.x - random(4, 8);
         }
       }
-      //   this.x = mouseX;
-      //   this.y = mouseY;
     }
     this.x = constrain(this.x, 0 + this.r, width - this.r);
     this.y = constrain(this.y, 0 + this.r, height - this.r);
