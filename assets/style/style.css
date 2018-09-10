@@ -9,6 +9,10 @@ canvas {
   margin: auto;
 }
 
+a {
+  color: #ffffff;
+}
+
 .Holder {
   display: table;
   position: fixed;
